@@ -21,6 +21,7 @@ int main(int argc, char *argv[]) {
         } else {
             // Else greet the user based on the argument provided
             printf("Hello, World! - I'm %s", argv[1]);
+            return 0;
         }
     } else {
         // Else no arguments are provided
