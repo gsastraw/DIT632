@@ -25,8 +25,7 @@ int main(int argc, char *argv[]) {
         }
     } else {
         // Else no arguments are provided
-        printf("No arguments provided!");
-        help();
+        printf("No arguments provided! Provide -h as an argument if you'd like info on how to use this program!");
         return 1;
     }
 }
