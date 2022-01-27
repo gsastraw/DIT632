@@ -63,6 +63,14 @@ void draw_histogram(int *freq) {
 }
 
 // ------ Function definitions ----------
+/* 
+Comparator function that compares between two elements to sort array. We declare this function with two parameters:
+    @a and b = const void because we do not want to modify this at all, and because we want to pass in a pointer to the 
+               variables contained within this pointer address. Additionally, we want to be able to pass this in to qsort() which
+               takes in a comparator function that requires const void* in parameters.
+    
+    We then convert a and b to integers and return the value.
+*/
 int comparator (const void* a, const void* b) {
     return (*(int*) a - *(int*) b);
 }
