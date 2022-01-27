@@ -5,9 +5,9 @@
 
 int main()
 {
-    srand(time(NULL)); /*Ensures psuedo-random number*/
+    srand(time(NULL));               /*Ensures psuedo-random number*/
     int number = (rand() % 100 + 1); /*Generates a random number between 1-100*/
-    int guess = 0; 
+    int guess = 0;
     const int MAX_NUMBER = 9; /*The maximum amount of times the user can guess*/
     int guesses = 0;
     int choice = 1;
@@ -17,7 +17,7 @@ int main()
     do
     {
         printf("Enter your guess:");
-        printf("The answer is %d", number);
+        //printf("The answer is %d", number);
         scanf("%d", &guess);
         if (guess > 100 || guess < 1) /*Program will only accept numbers between 1-100*/
         {
