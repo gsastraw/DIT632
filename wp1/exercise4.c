@@ -6,13 +6,11 @@ int binary_decimal(int n);
 
 int main()
 {
-    printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
     int n;
     char c;
     printf("Enter the binary number: ");
     scanf("%d", &n);
     printf("\n\n\nThe decimal equivalent of %d is  %d\n\n", n, binary_decimal(n)); // function calling
-    printf("\n\n\t\t\tCoding is Fun !\n\n\n");
     return 0;
 }
 
