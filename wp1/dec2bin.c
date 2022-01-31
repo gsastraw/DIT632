@@ -5,7 +5,7 @@
 
 void print_help()
 {
-    printf("Usage: dec2bin.exe <decimal number>\n");
+    printf("Usage: dec2bin <decimal number>\n");
     printf("Input must be under 19 digits.\n");
     //print how many digits is needed for long -> upper limit
 }
@@ -84,7 +84,7 @@ int main(int argc, char **argv)
     //convert input parameter to long
     converted = strtol(argv[1], &eptr, 10);
 
-    printf("%ld decimal\n", converted);
+    //printf("%ld decimal\n", converted);
 
     //deal one byte at a time, convert long into an array of bytes
 

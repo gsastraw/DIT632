@@ -7,8 +7,8 @@
 
 void print_help()
 {
-    printf("Usage: dec2bin.exe <decimal number>\n");
-    printf("Input must be under 19 digits.\n");
+    printf("Usage: bin2hec <binary number>\n");
+    printf("Input must be under %d digits.\n", MAX_BITS);
     //print how many digits is needed for long -> upper limit
 }
 
@@ -32,6 +32,8 @@ int main(int argc, char **argv)
     //find length of string and make sure less than 64
     //iterate over string and check if each value is 0 or 1
     int cursor = 0;
+
+    printf("input is = %s\n", argv[1]);
     while (argv[1][cursor] > 0)
     {
         //bit handler will be an array of bits instead of string to make for easier mathematical compuatation
@@ -163,7 +165,8 @@ int main(int argc, char **argv)
         case 0xd:
         case 0xe:
         case 0xf:
-            nibble += 65;
+            nibble += 65 - 10;
+            //subtract 10v to offset 0xa, which is 10
             break; //if between a-f add 65
         }
 
