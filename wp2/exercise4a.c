@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef unsigned char byte; 
-
 int main(int argc, char* argv[]) {
     char *buffer;
     size_t bufferSize = 8;
