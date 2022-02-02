@@ -3,15 +3,6 @@
 
 typedef unsigned char byte; 
 
-void convertToBinary(unsigned char value) {
-    int compare;
-    printf("\n");
-    for (int bytes = 7; bytes >= 0; bytes--) {
-        compare = value >> bytes;
-        compare & 1 ? printf("1") : printf("0");
-    }
-}
-
 int main(int argc, char* argv[]) {
     char *buffer;
     size_t bufferSize = 8;
@@ -54,8 +45,6 @@ int main(int argc, char* argv[]) {
     value += atoi(argv[4]) << 1;
     value += atoi(argv[5]);
 
-    convertToBinary(value);
-    printf("\n");
     printf("%02X\n", value);
 
     return 0;
