@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef unsigned char byte; 
-
 void convertToBinary(unsigned char value) {
     int compare;
     for (int bytes = 7; bytes >= 0; bytes--) {
