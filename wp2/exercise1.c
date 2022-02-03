@@ -81,7 +81,7 @@ int main(void)
             printf("\nPlease input X starting coordinate\n");
             fgets(coordinates, 10, stdin); //reading user input and storing in variable
             int xcoord = atoi(coordinates); // If the input could not be parsed to an integer, 0 is returned from atoi.
-            if (xcoord == 0) //therefore if xcoord is 0 it is an invalid character
+            if (xcoord == 0) //therefore if xcoord is 0 it is an invalid character/not an integer
             {
                 printf("\nInvalid character! Try again.\n");
             }
@@ -90,7 +90,7 @@ int main(void)
                 robot->xpos = xcoord; //setting the position on x axis 
                 invalidcoord = false; //allowing to get out of loop
             }
-        } while (invalidcoord);
+        } while (invalidcoord); //This will loop until user has provided a valid input
 
         do //new loop so user wont have to redo both coordinates inputs
         {
@@ -107,14 +107,14 @@ int main(void)
                 robot->ypos = ycoord;//setting the position on y axis
                 invalidcoord = false; //allowing to get out of loop
             }
-        } while (invalidcoord); //condition to break loop
+        } while (invalidcoord); //condition to break loop, will also loop until user has provided a valid input
 
         printf("\n Your current position is %d,%d facing %c\n ", robot->xpos, robot->ypos, robot->dir);
 
         do
         {
             printf("\n Please input desired movement for robot. \n M=Move forward \n T=Turn 90 degrees clockwise\n");
-            fgets(userInput, 1024, stdin);
+            fgets(userInput, 1024, stdin); //read input and store in userInput variable
             if (!(*userInput == 'M' || *userInput == 'm' || *userInput == 'T' || *userInput == 't')) //Grouped condition to check valid input
             {
                 printf("\nInvalid character! Only 'm' and 't' are allowed. Try again.\n");
@@ -125,12 +125,12 @@ int main(void)
                 int len = strlen(userInput); //gets the length of the string input
                 for (int i = 0; i < len - 1; i++) //for each valid character in userInput - newline
                 {
-                    if (userInput[i] == 't' || userInput[i] == 'T')
+                    if (userInput[i] == 't' || userInput[i] == 'T') //If the user chooses to turn the robot by inputting lower case 't' or capital 'T'
                     {
                         turn(robot); //call turn function
                         invalidmove = false; //gets out of do while loop
                     }
-                    else if (userInput[i] == 'm' || userInput[i] == 'M')
+                    else if (userInput[i] == 'm' || userInput[i] == 'M') //If the user chooses to turn the robot by inputting lower case 'm' or capital 'M'
                     {
                         move(robot); //call move function
                         invalidmove = false; //gets out of do while loop
@@ -141,12 +141,12 @@ int main(void)
         printf("\n Your current position is %d,%d facing %c\n ", robot->xpos, robot->ypos, robot->dir);
 
         printf("\n Q=Quit or hit enter to continue\n");
-        int c = getchar();
-        if (c == 'Q' || c == 'q')
+        int c = getchar(); //artibitrarily storing a variable 
+        if (c == 'Q' || c == 'q') //if that variable given is 'q' or 'Q'
         {
-            cont = false; //changes boolean to quit program
+            cont = false; //changes boolean to quit program and exit while loop
         }
 
     } while (cont); //Program will loop until boolean is changed from user input
-    return 0;
+    return 0; //return exit code
 }
