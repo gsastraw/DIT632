@@ -1,7 +1,7 @@
 // (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31 (2022) 
-// Work package 1 
+// Work package 2 
 // Exercise 1 
-// Submission code: XXXXXX (provided by your TA-s) 
+// Submission code: qKHW0fDS5 (provided by your TA-s) 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
