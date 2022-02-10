@@ -1,7 +1,9 @@
-// C++ code
-//
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 123 __ (2022)
+// Work package 3
+// Exercise 3
+// Submission code: XXXXXX (provided by your TA-s)
 
-#define TEMPERATURE_SENSOR A1
+#define TEMPERATURE_SENSOR A1 //the temperature sensore connects to A1
 
 int light_intensity; //the range of light intensity from 0-100
 double temperature;  //the value of temperature measured in celsius
