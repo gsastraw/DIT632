@@ -314,85 +314,94 @@ int red_high = 0;
 
 /************************************************************************/
 
-void setup() //Runs at start
+void setup() // Runs at start
 {
-  pinMode(A0, INPUT); //configure analog in A0 as input
-  pinMode(9, OUTPUT); //configure pin 9 as output
-  pinMode(10, OUTPUT); //configure pin 10 as output
-  pinMode(11, OUTPUT); //configure pin 11 as output
-  pinMode(12, OUTPUT); //configure pin 12 as output
-  pinMode(13, OUTPUT); //configure pin 13 as output
-  
-  Serial.begin(9600);
-  Timer1.initialize(100000); //Initialize timer with 1 second period
-  Timer1.attachInterrupt( getTemp ); //callback function to get the temperature with an interrupt on the timer
+    pinMode(A0, INPUT);  // configure analog in A0 as input
+    pinMode(9, OUTPUT);  // configure pin 9 as output
+    pinMode(10, OUTPUT); // configure pin 10 as output
+    pinMode(11, OUTPUT); // configure pin 11 as output
+    pinMode(12, OUTPUT); // configure pin 12 as output
+    pinMode(13, OUTPUT); // configure pin 13 as output
+
+    Serial.begin(9600);
+    Timer1.initialize(100000);       // Initialize timer with 1 second period
+    Timer1.attachInterrupt(getTemp); // callback function to get the temperature with an interrupt on the timer
 }
 
-void loop() //Runs until program is ended
+void loop() // Runs until program is ended
 {
-  
-  LED_conditions(); //call LED_conditions() function to check which LEDs should turn on
-  
-  delay(100); // Delay a little bit to improve simulation performance
+
+    LED_conditions(); // call LED_conditions() function to check which LEDs should turn on
+
+    delay(100); // Delay a little bit to improve simulation performance
 }
 
-void getTemp() //Function to read temperature
+void getTemp()
 {
-  temp = -40 + 0.488155 * (analogRead(A0) - 20); //Reads and set temperature (Formula copied from block code in Tinkercad)
+    int sensorReading = analogRead(A0);   // read temperature from sensor connected to Analog in A0
+    double voltage = sensorReading * 5.0; // calculation for voltage
+    voltage /= 1024.0;                    // calculation for voltage per unit
+    temp = (voltage - 0.55) * 100;        // calculation for temperature
 }
 
-void LED_conditions() //Function to check which LEDs should turn on
+void LED_conditions() // Function to check which LEDs should turn on
 {
-  blue_low = 0; //define variable lower bound for temperature range for blue light
-  blue_high = 10; //define variable higher bound for temperature range for blue light
-  green_low = 11; //define variable lower bound for temperature range for green light
-  green_high = 20; //define variable higher bound for temperature range for green light
-  yellow_low = 21; //define variable lower bound for temperature range for yellow light
-  yellow_high = 30; //define variable higher bound for temperature range for yellow light
-  orange_low = 31; //define variable lower bound for temperature range for orange light
-  orange_high = 40; //define variable higher bound for temperature range for orange light
-  red_low = 41; //define variable lower bound for temperature range for red light
-  red_high = 50; //define variable higher bound for temperature range for red light
-    if (temp >= blue_low && temp <= blue_high) { //If the temperature is within the range of blue
-    digitalWrite(9, LOW); //red is off
-    digitalWrite(10, LOW); //orange is off
-    digitalWrite(11, LOW); //yellow is off
-    digitalWrite(12, LOW); //green is off
-    digitalWrite(13, HIGH); //blue is on
-  }
-  if (temp > green_low && temp <= green_high) { //if the temperature is within the range of green, previous light is also on
-    digitalWrite(9, LOW); //red is off
-    digitalWrite(10, LOW); //orange is off
-    digitalWrite(11, LOW); //yellow is off
-    digitalWrite(12, HIGH); //green is on
-    digitalWrite(13, HIGH); //blue is on
-  }
-  if (temp > yellow_low && temp <= yellow_high) { //if the temperature is within the range of yellow, previous lights are also on
-    digitalWrite(9, LOW); //red is off
-    digitalWrite(10, LOW); //orange is off
-    digitalWrite(11, HIGH); //yellow is on
-    digitalWrite(12, HIGH); //green is on
-    digitalWrite(13, HIGH); //blue is on
-  }
-  if (temp > orange_low && temp <= orange_high) { //if the temperature is within the range of orange, previous lights are also on
-    digitalWrite(9, LOW); //red is off
-    digitalWrite(10, HIGH); //orange is on
-    digitalWrite(11, HIGH); //yellow is on
-    digitalWrite(12, HIGH); //green is on
-    digitalWrite(13, HIGH); //blue is on
-  }
-  if (temp > red_low && temp <= red_high) { //if the temperature is within the range of red, all previous lights are also on
-    digitalWrite(9, HIGH); //red is on
-    digitalWrite(10, HIGH); //orange is on
-    digitalWrite(11, HIGH); //yellow is on
-    digitalWrite(12, HIGH); //green is on
-    digitalWrite(13, HIGH); //blue is on
-  }
-  if (temp > red_high || temp < blue_low) { //If the temperature is out of range of defined temperature ranges, all lights are off
-    digitalWrite(9, LOW); //red is off
-    digitalWrite(10, LOW); //orange is off
-    digitalWrite(11, LOW); //yellow is off
-    digitalWrite(12, LOW); //green is off
-    digitalWrite(13, LOW); //blue is off
-  }
+    blue_low = 0;     // define variable lower bound for temperature range for blue light
+    blue_high = 10;   // define variable higher bound for temperature range for blue light
+    green_low = 11;   // define variable lower bound for temperature range for green light
+    green_high = 20;  // define variable higher bound for temperature range for green light
+    yellow_low = 21;  // define variable lower bound for temperature range for yellow light
+    yellow_high = 30; // define variable higher bound for temperature range for yellow light
+    orange_low = 31;  // define variable lower bound for temperature range for orange light
+    orange_high = 40; // define variable higher bound for temperature range for orange light
+    red_low = 41;     // define variable lower bound for temperature range for red light
+    red_high = 50;    // define variable higher bound for temperature range for red light
+    if (temp >= blue_low && temp <= blue_high)
+    {                           // If the temperature is within the range of blue
+        digitalWrite(9, LOW);   // red is off
+        digitalWrite(10, LOW);  // orange is off
+        digitalWrite(11, LOW);  // yellow is off
+        digitalWrite(12, LOW);  // green is off
+        digitalWrite(13, HIGH); // blue is on
+    }
+    if (temp > green_low && temp <= green_high)
+    {                           // if the temperature is within the range of green, previous light is also on
+        digitalWrite(9, LOW);   // red is off
+        digitalWrite(10, LOW);  // orange is off
+        digitalWrite(11, LOW);  // yellow is off
+        digitalWrite(12, HIGH); // green is on
+        digitalWrite(13, HIGH); // blue is on
+    }
+    if (temp > yellow_low && temp <= yellow_high)
+    {                           // if the temperature is within the range of yellow, previous lights are also on
+        digitalWrite(9, LOW);   // red is off
+        digitalWrite(10, LOW);  // orange is off
+        digitalWrite(11, HIGH); // yellow is on
+        digitalWrite(12, HIGH); // green is on
+        digitalWrite(13, HIGH); // blue is on
+    }
+    if (temp > orange_low && temp <= orange_high)
+    {                           // if the temperature is within the range of orange, previous lights are also on
+        digitalWrite(9, LOW);   // red is off
+        digitalWrite(10, HIGH); // orange is on
+        digitalWrite(11, HIGH); // yellow is on
+        digitalWrite(12, HIGH); // green is on
+        digitalWrite(13, HIGH); // blue is on
+    }
+    if (temp > red_low && temp <= red_high)
+    {                           // if the temperature is within the range of red, all previous lights are also on
+        digitalWrite(9, HIGH);  // red is on
+        digitalWrite(10, HIGH); // orange is on
+        digitalWrite(11, HIGH); // yellow is on
+        digitalWrite(12, HIGH); // green is on
+        digitalWrite(13, HIGH); // blue is on
+    }
+    if (temp > red_high || temp < blue_low)
+    {                          // If the temperature is out of range of defined temperature ranges, all lights are off
+        digitalWrite(9, LOW);  // red is off
+        digitalWrite(10, LOW); // orange is off
+        digitalWrite(11, LOW); // yellow is off
+        digitalWrite(12, LOW); // green is off
+        digitalWrite(13, LOW); // blue is off
+    }
 }
