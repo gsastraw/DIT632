@@ -1,5 +1,7 @@
-// C++ code
-//
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31 (2022)
+// Work package 4
+// Exercise 1
+// Submission code: XXXXXX (provided by your TA-s)
 
 /************************Library*******************************/
 
