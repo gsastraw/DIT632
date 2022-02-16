@@ -1,9 +1,4 @@
 // (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31 (2022) 
-<<<<<<< HEAD
-// Work package 2 
-=======
-// Work package 2
->>>>>>> 22451a6c4abece0e4968a7e38b487498d62b9352
 // Exercise 1 
 // Submission code: qKHW0fDS5 (provided by your TA-s) 
 #include <stdio.h>
