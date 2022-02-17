@@ -1,7 +1,7 @@
-// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 123 __ (2022)
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
 // Work package 3
-// Exercise 3
-// Submission code: XXXXXX (provided by your TA-s)
+// Exercise 2
+// Submission code: ieBXfeFq
 
 #define TEMPERATURE_SENSOR A1 //the temperature sensore connects to A1
 
@@ -17,9 +17,9 @@ double temperature;  //the value of temperature measured in celsius
  */
 double convertTemperature(int sensorReading)
 {
-  double voltage = (sensorReading * 5.0) / 1023.0; //calculation for voltage per unit
-  temperature = (voltage - 0.5) * 100;             //calculation for temperature
-  return temperature;
+    double voltage = (sensorReading * 5.0) / 1023.0; //calculation for voltage per unit
+    temperature = (voltage - 0.5) * 100;             //calculation for temperature
+    return temperature;
 }
 
 /**
@@ -29,8 +29,8 @@ double convertTemperature(int sensorReading)
  */
 void setup()
 {
-  pinMode(TEMPERATURE_SENSOR, INPUT); //these are the hardware used on the Arduino circuitry
-  Serial.begin(9600);
+    pinMode(TEMPERATURE_SENSOR, INPUT); //these are the hardware used on the Arduino circuitry
+    Serial.begin(9600);
 }
 
 /**
@@ -41,10 +41,10 @@ void setup()
  */
 void loop()
 {
-  temperature = convertTemperature(analogRead(TEMPERATURE_SENSOR)); //the value of temperature is assigned from the input passed as a params to convertTemperature
+    temperature = convertTemperature(analogRead(TEMPERATURE_SENSOR)); //the value of temperature is assigned from the input passed as a params to convertTemperature
 
-  Serial.print("TEMPERATURE LEVEL IS "); //String is printed onto serial to serve as information
-  Serial.println(temperature);           //value of temperature is printed onto serial
-  delay(2000);
-  // Serial.println(value);
+    Serial.print("TEMPERATURE LEVEL IS "); //String is printed onto serial to serve as information
+    Serial.println(temperature);           //value of temperature is printed onto serial
+    delay(2000);
+    // Serial.println(value);
 }

@@ -1,3 +1,8 @@
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
+// Work package 3
+// Exercise 2
+// Submission code: ieBXfeFq
+
 // C++ code
 //
 

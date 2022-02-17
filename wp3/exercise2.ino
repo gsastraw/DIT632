@@ -1,7 +1,7 @@
-// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 123 __ (2022)
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
 // Work package 3
 // Exercise 2
-// Submission code: XXXXXX (provided by your TA-s)
+// Submission code: ieBXfeFq
 
 #define RED 13                //the red light is connected to 13
 #define GREEN 12              //the green light is connected to 12
