@@ -58,7 +58,7 @@ int interval[] = {-30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110
  * @brief Set the Colors object on the neopixel
  * 
  */
-void set_rgb() // function to set the colors on the LED ring
+void set_rgb()
 {
   uint16_t i; // unsigned int of 16 bits
   //loop that iterates through every light
@@ -78,7 +78,7 @@ void set_rgb() // function to set the colors on the LED ring
       }
       else if (i < 16)
       {
-        //red lef turns off
+        //red led turns off
         digitalWrite(RED_LED, LOW);
       }
       else
