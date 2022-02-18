@@ -1,7 +1,7 @@
-// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
-// Work package 3
-// Exercise 2
-// Submission code: ieBXfeFq
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31 (2022)
+// Work package 4
+// Exercise 1
+// Submission code: h2mfv51V (provided by your TA-s)
 
 #include <Adafruit_NeoPixel.h> // header for the led ring functionality
 
