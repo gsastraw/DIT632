@@ -1,3 +1,8 @@
+// (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
+// Work package 6
+// Exercise 1
+// Submission code:
+
 // WP 6 Exercise 1 Template DIT 632
 
 #define ENCA 2
