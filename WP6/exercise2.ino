@@ -3,6 +3,8 @@
 // Exercise 1
 // Submission code:
 
+#include <Arduino.h>
+
 #define SPEAKER_PIN 9
 #define TRIG_PIN 7
 #define ECHO_PIN 6
