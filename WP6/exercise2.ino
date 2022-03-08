@@ -1,6 +1,6 @@
 // (C) Gregory Sastrawidjaya, Klara Svensson, Julia Van Kirk, group: 31
 // Work package 6
-// Exercise 1
+// Exercise 2
 // Submission code:
 
 // Include arduino standard library
@@ -15,7 +15,7 @@
 #define LED_THREE 3
 #define LED_FOUR 2
 
-#define STANDARD_BAUD_RATE 9600
+#define STANDARD_BAUD_RATE 9600 // Define the standard baud rate for serial communication between arduino board and external device
 #define MAX_DISTANCE 200 // Define a max distance of 200 for the ultrasonic sensor
 #define MIN_DISTANCE 25 // Define a min distance of 25 for the ultrasonic sensor
 
