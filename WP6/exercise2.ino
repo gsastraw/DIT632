@@ -100,7 +100,7 @@ void turnOnLedBasedOnDistance()
   else if (distance <= MAX_DISTANCE && distance >= 130)
   {
     digitalWrite(LED_ONE, HIGH); // print out HIGH to LED_ONE (defined at top) which turns it on
-    digitalWrite(LED_TWO, LOW); // print out LOW to LED_TWO (defined at top) which turns it on
+    digitalWrite(LED_TWO, LOW); // print out LOW to LED_TWO (defined at top) which turns it off satisfying requirements in assignment doc 
     digitalWrite(LED_THREE, LOW); // prints out LOW to LED_THREE (defined at top) which turns it off satisfying requirements in assignment doc
     digitalWrite(LED_FOUR, LOW); // prints out LOW to LED_FOUR (defined at top) which turns it off satisfying requirements in assignment doc
   }
